@@ -1,4 +1,4 @@
-CREATE DATABASE db_hopark
+CREATE DATABASE db_hopark;
 
 USE db_hopark
 
@@ -7,7 +7,7 @@ CREATE TABLE users(
     username VARCHAR(16) NOT NULL,
     password VARCHAR(60) NOT NULL,
     fullname VARCHAR(100) NOT NULL
-)
+);
 
 ALTER TABLE users
     ADD PRIMARY KEY (id);

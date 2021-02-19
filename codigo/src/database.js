@@ -5,7 +5,7 @@ const { database } = require('./keys')
 
 const pool = mysql.createPool(database)
 
-pool.getConnection((error, connection)=>{
+pool.getConnection((err, connection)=>{
     if (err){
         if (err.code === 'PROTOCOL_CONNECTION_LOST'){
             console.log('DATABASE CONNECTION WAS CLOSED')
@@ -18,9 +18,9 @@ pool.getConnection((error, connection)=>{
         }
     }
 
-    if (connection) connection.release()
-    console.log('DB is connected')
-    return
+    if (connection) connection.release();
+    console.log('DB is connected');
+    return;
 })
 
 //convertir promesas lo que era en callback
