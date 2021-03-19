@@ -1,22 +1,39 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-      <a class="navbar-brand" href="#">Hopark</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+    <a class="navbar-brand" href="/">Hopark</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        {{#if user}}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
+            aria-haspopup="true" aria-expanded="false">
+            Links
+            </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a href="/links" class="dropdown-item">Todos los links</a>
+            <div class="dropdown-divider"></div>
+            <a href="/links/add" class="dropdown-item">Agregar link</a>
+          </div>  
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/links">All Links</a>
+            <a href="/profile" class="nav-link">Perfil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/links/add">Edit links</a>
+            <a href="/logout" class="nav-link">Cerrar sesion</a>
           </li>
-        </ul>
-      </div>
+        {{else}}
+          <li class="nav-item">
+            <a href="/signin" class="nav-link">Ingresar</a>
+          </li> 
+          <li class="nav-item">
+            <a href="/signup" class="nav-link">Registrarase</a>
+          </li> 
+        {{/if}}
+      </ul>
+    </div>
   </div>
 </nav>
