@@ -7,9 +7,9 @@ router.get('/signup', (req, res)=>{
 })
 
 router.post('/signup', passport.authenticate('local.signup', {
-    successRedirect: '/profile',
-        failureRedirect: '/signup',
-        failureFalsh: true
+    successRedirect: '/signin',
+    failureRedirect: '/signup',
+    failureFalsh: true
 }))
 
 router.get('/signin', (req, res)=>{
